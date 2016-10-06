@@ -6,7 +6,7 @@ namespace Puppr.API.Models
     public class Pet
     {
         public int PetId { get; set; }
-        public int OwnerId { get; set; }
+        public string OwnerId { get; set; }
 
         public int BreedId { get; set; }
         public string Name { get; set; }

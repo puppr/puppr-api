@@ -17,35 +17,24 @@ namespace Puppr.API.Controllers
     {
         private PupprDataContext db = new PupprDataContext();
 
-        // GET: api/Owners
-        public IQueryable<Owner> GetOwners()
-        {
-            return db.Owners;
-        }
-
-        // GET: api/Owners/5
-        [ResponseType(typeof(Owner))]
-        public IHttpActionResult GetOwner(int id)
-        {
-            Owner owner = db.Owners.Find(id);
-            if (owner == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(owner);
-        }
-
         // PUT: api/Owners/5
+        [Authorize]
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutOwner(int id, Owner owner)
+        public IHttpActionResult PutOwner(string id, Owner owner)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != owner.OwnerId)
+            if (id != owner.Id)
+            {
+                return BadRequest();
+            }
+
+            var user = db.Users.FirstOrDefault(u => u.UserName == this.User.Identity.Name);
+
+            if(id != user.Id)
             {
                 return BadRequest();
             }
@@ -71,35 +60,16 @@ namespace Puppr.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Owners
-        [ResponseType(typeof(Owner))]
-        public IHttpActionResult PostOwner(Owner owner)
+        // GET: api/Owners/5/pets
+        [Authorize]
+        public dynamic GetPetsForOwner()
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            // Get the currently logged in user
+                // By checking the username against the token
+            var user = db.Users.FirstOrDefault(u => u.UserName == this.User.Identity.Name);
 
-            db.Owners.Add(owner);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = owner.OwnerId }, owner);
-        }
-
-        // DELETE: api/Owners/5
-        [ResponseType(typeof(Owner))]
-        public IHttpActionResult DeleteOwner(int id)
-        {
-            Owner owner = db.Owners.Find(id);
-            if (owner == null)
-            {
-                return NotFound();
-            }
-
-            db.Owners.Remove(owner);
-            db.SaveChanges();
-
-            return Ok(owner);
+            // Return pets where that pets owner id matches the currently logged in user id.
+            return db.Pets.Where(p => p.OwnerId == user.Id);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +81,9 @@ namespace Puppr.API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool OwnerExists(int id)
+        private bool OwnerExists(string id)
         {
-            return db.Owners.Count(e => e.OwnerId == id) > 0;
+            return db.Users.Count(e => e.Id == id) > 0;
         }
     }
 }

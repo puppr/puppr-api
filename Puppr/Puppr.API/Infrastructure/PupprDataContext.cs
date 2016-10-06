@@ -1,4 +1,5 @@
-﻿using Puppr.API.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Puppr.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace Puppr.API.Infrastructure
 {
-    public class PupprDataContext : DbContext
+    public class PupprDataContext : IdentityDbContext<Owner>
     {
         public PupprDataContext() : base("Puppr")
         {
@@ -17,7 +18,6 @@ namespace Puppr.API.Infrastructure
         public IDbSet<Battle> Battles { get; set; }
         public IDbSet<Breed> Breeds { get; set; }
         public IDbSet<Category> Categories { get; set; }
-        public IDbSet<Owner> Owners { get; set; }
         public IDbSet<Pet> Pets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -47,6 +47,7 @@ namespace Puppr.API.Infrastructure
                 .WithRequired(p => p.Pet)
                 .HasForeignKey(p => p.PetTwoId);
 
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

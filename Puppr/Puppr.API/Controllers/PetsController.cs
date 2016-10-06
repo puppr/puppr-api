@@ -13,10 +13,8 @@ using Puppr.API.Models;
 
 namespace Puppr.API.Controllers
 {
-    public class PetsController : ApiController
+    public class PetsController : SecuredController
     {
-        private PupprDataContext db = new PupprDataContext();
-
         // GET: api/Pets
         public IQueryable<Pet> GetPets()
         {
@@ -37,6 +35,7 @@ namespace Puppr.API.Controllers
         }
 
         // PUT: api/Pets/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutPet(int id, Pet pet)
         {
@@ -46,6 +45,11 @@ namespace Puppr.API.Controllers
             }
 
             if (id != pet.PetId)
+            {
+                return BadRequest();
+            }
+
+            if(!CurrentUser.Pets.Any(p => p.PetId == id))
             {
                 return BadRequest();
             }
@@ -72,6 +76,7 @@ namespace Puppr.API.Controllers
         }
 
         // POST: api/Pets
+        [Authorize]
         [ResponseType(typeof(Pet))]
         public IHttpActionResult PostPet(Pet pet)
         {
@@ -80,6 +85,8 @@ namespace Puppr.API.Controllers
                 return BadRequest(ModelState);
             }
 
+            pet.OwnerId = CurrentUser.Id;
+
             db.Pets.Add(pet);
             db.SaveChanges();
 
@@ -87,10 +94,17 @@ namespace Puppr.API.Controllers
         }
 
         // DELETE: api/Pets/5
+        [Authorize]
         [ResponseType(typeof(Pet))]
         public IHttpActionResult DeletePet(int id)
         {
             Pet pet = db.Pets.Find(id);
+
+            if(pet.OwnerId != CurrentUser.Id)
+            {
+                return NotFound();
+            }
+
             if (pet == null)
             {
                 return NotFound();
