@@ -18,14 +18,14 @@ namespace Puppr.API.Controllers
         // GET: api/Pets
         public IQueryable<Pet> GetPets()
         {
-            return db.Pets;
+            return Db.Pets;
         }
 
         // GET: api/Pets/5
         [ResponseType(typeof(Pet))]
         public IHttpActionResult GetPet(int id)
         {
-            Pet pet = db.Pets.Find(id);
+            Pet pet = Db.Pets.Find(id);
             if (pet == null)
             {
                 return NotFound();
@@ -54,11 +54,11 @@ namespace Puppr.API.Controllers
                 return BadRequest();
             }
 
-            db.Entry(pet).State = EntityState.Modified;
+            Db.Entry(pet).State = EntityState.Modified;
 
             try
             {
-                db.SaveChanges();
+                Db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -87,8 +87,8 @@ namespace Puppr.API.Controllers
 
             pet.OwnerId = CurrentUser.Id;
 
-            db.Pets.Add(pet);
-            db.SaveChanges();
+            Db.Pets.Add(pet);
+            Db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = pet.PetId }, pet);
         }
@@ -98,7 +98,7 @@ namespace Puppr.API.Controllers
         [ResponseType(typeof(Pet))]
         public IHttpActionResult DeletePet(int id)
         {
-            Pet pet = db.Pets.Find(id);
+            Pet pet = Db.Pets.Find(id);
 
             if(pet.OwnerId != CurrentUser.Id)
             {
@@ -110,8 +110,8 @@ namespace Puppr.API.Controllers
                 return NotFound();
             }
 
-            db.Pets.Remove(pet);
-            db.SaveChanges();
+            Db.Pets.Remove(pet);
+            Db.SaveChanges();
 
             return Ok(pet);
         }
@@ -120,14 +120,14 @@ namespace Puppr.API.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                Db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         private bool PetExists(int id)
         {
-            return db.Pets.Count(e => e.PetId == id) > 0;
+            return Db.Pets.Count(e => e.PetId == id) > 0;
         }
     }
 }

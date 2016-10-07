@@ -183,6 +183,7 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Infrastructure\AuthRepository.cs" />
     <Compile Include="Infrastructure\PupprDataContext.cs" />
+    <Compile Include="Infrastructure\SecuredController.cs" />
     <Compile Include="Infrastructure\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Migrations\201609282128052_InitialMigration.cs" />
     <Compile Include="Migrations\201609282128052_InitialMigration.Designer.cs">

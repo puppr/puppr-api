@@ -9,19 +9,22 @@ namespace Puppr.API.Infrastructure
 {
     public class SecuredController : ApiController
     {
-        protected PupprDataContext db = new PupprDataContext();
+        protected PupprDataContext Db = new PupprDataContext();
 
         protected Owner CurrentUser
         {
             get
             {
-                return db.Users.FirstOrDefault(u => u.UserName == this.User.Identity.Name);
+                return Db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
             }
         }
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            if(disposing)
+            {
+                Db.Dispose();
+            }   
         }
     }
 }
