@@ -179,6 +179,7 @@
     <Compile Include="Controllers\BreedsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\OwnersController.cs" />
+    <Compile Include="Controllers\PetPhotoesController.cs" />
     <Compile Include="Controllers\PetsController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Infrastructure\AuthRepository.cs" />
@@ -209,12 +210,17 @@
     <Compile Include="Migrations\201610052311491_AddIdentity.Designer.cs">
       <DependentUpon>201610052311491_AddIdentity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610071659141_pet photos controller.cs" />
+    <Compile Include="Migrations\201610071659141_pet photos controller.Designer.cs">
+      <DependentUpon>201610071659141_pet photos controller.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Battle.cs" />
     <Compile Include="Models\Breed.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Owner.cs" />
     <Compile Include="Models\Pet.cs" />
+    <Compile Include="Models\PetPhoto.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610052311491_AddIdentity.resx">
       <DependentUpon>201610052311491_AddIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610071659141_pet photos controller.resx">
+      <DependentUpon>201610071659141_pet photos controller.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

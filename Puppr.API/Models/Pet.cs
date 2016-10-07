@@ -18,5 +18,6 @@ namespace Puppr.API.Models
         public virtual Owner Owner { get; set; }
         public virtual Breed Breed { get; set; }
         public virtual ICollection<Battle> Battles { get; set; }
+        public virtual ICollection<PetPhoto> PetPhotos { get; set; }
     }
 }

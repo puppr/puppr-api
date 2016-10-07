@@ -38,6 +38,11 @@ namespace Puppr.API.Infrastructure
                 .HasForeignKey(p => p.CategoryId);
 
             modelBuilder.Entity<Pet>()
+                .HasMany(o => o.PetPhotos)
+                .WithRequired(p => p.Pet)
+                .HasForeignKey(p => p.PetId);
+
+            modelBuilder.Entity<Pet>()
                 .HasMany(o => o.Battles)
                 .WithRequired(p => p.Pet)
                 .HasForeignKey(p => p.PetOneId);
@@ -49,5 +54,7 @@ namespace Puppr.API.Infrastructure
 
             base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<Puppr.API.Models.PetPhoto> PetPhotoes { get; set; }
     }
 }

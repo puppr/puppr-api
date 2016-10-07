@@ -31,8 +31,8 @@ namespace Puppr.API.Controllers
             {
                 return errorResult;
             }
-
-            return Ok();
+            var owner = await _authRepository.FindUser(registration.Username, registration.Password);
+            return Ok(owner.Id);
         }
 
 
