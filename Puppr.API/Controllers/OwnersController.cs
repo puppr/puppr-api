@@ -17,6 +17,25 @@ namespace Puppr.API.Controllers
     {
         private PupprDataContext db = new PupprDataContext();
 
+        [Authorize]
+        [Route("api/owners/me")]
+        public IHttpActionResult GetCurrentOwner()
+        {
+            var owner = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+
+            return Ok(new
+            {
+                owner.Biography,
+                owner.Email,
+                owner.FirstName,
+                owner.LastName,
+                owner.Id,
+                owner.Photo,
+                owner.UserName,
+                owner.Pets
+            });
+        }
+
         // GET: api/Owners/1
         [Authorize]
         public IHttpActionResult GetOwner(string id)
