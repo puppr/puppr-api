@@ -17,10 +17,33 @@ namespace Puppr.API.Controllers
     {
         private PupprDataContext db = new PupprDataContext();
 
+        // GET: api/Owners/1
+        [Authorize]
+        public IHttpActionResult GetOwner(string id)
+        {
+            if(!OwnerExists(id))
+            {
+                return NotFound();
+            }
+
+            var owner = db.Users.Find(id);
+
+            return Ok(new
+            {
+                owner.Biography,
+                owner.Email,
+                owner.FirstName,
+                owner.LastName,
+                owner.Id,
+                owner.Photo,
+                owner.UserName
+            });
+        }
+
         // PUT: api/Owners/5
         [Authorize]
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutOwner(string id, Owner owner)
+        public IHttpActionResult PutOwner(string id, Owner.Changes owner)
         {
             if (!ModelState.IsValid)
             {
@@ -39,7 +62,11 @@ namespace Puppr.API.Controllers
                 return BadRequest();
             }
 
-            db.Entry(owner).State = EntityState.Modified;
+            var dbOwner = db.Users.Find(id);
+
+            db.Entry(dbOwner).CurrentValues.SetValues(owner);
+
+            db.Entry(dbOwner).State = EntityState.Modified;
 
             try
             {

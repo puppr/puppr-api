@@ -13,5 +13,14 @@ namespace Puppr.API.Models
         public string Biography { get; set; }
         public string Photo { get; set; }
         public virtual ICollection<Pet> Pets { get; set; }
+
+        public class Changes
+        {
+            public string Id { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string Biography { get; set; }
+            public string Photo { get; set; }
+        }
     }
 }
