@@ -36,7 +36,8 @@ namespace Puppr.API.Controllers
                 owner.LastName,
                 owner.Id,
                 owner.Photo,
-                owner.UserName
+                owner.UserName,
+                owner.Pets
             });
         }
 
