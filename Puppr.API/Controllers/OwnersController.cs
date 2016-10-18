@@ -29,7 +29,6 @@ namespace Puppr.API.Controllers
                 owner.Email,
                 owner.FirstName,
                 owner.LastName,
-                owner.Id,
                 owner.Photo,
                 owner.UserName,
                 owner.Pets
@@ -70,6 +69,8 @@ namespace Puppr.API.Controllers
                 return BadRequest(ModelState);
             }
 
+            owner.Id = id;
+
             if (id != owner.Id)
             {
                 return BadRequest();
@@ -85,7 +86,6 @@ namespace Puppr.API.Controllers
             var dbOwner = db.Users.Find(id);
 
             db.Entry(dbOwner).CurrentValues.SetValues(owner);
-
             db.Entry(dbOwner).State = EntityState.Modified;
 
             try
