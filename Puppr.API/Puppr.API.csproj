@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201610071659141_pet photos controller.Designer.cs">
       <DependentUpon>201610071659141_pet photos controller.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610182226217_gender added.cs" />
+    <Compile Include="Migrations\201610182226217_gender added.Designer.cs">
+      <DependentUpon>201610182226217_gender added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Battle.cs" />
     <Compile Include="Models\Breed.cs" />
@@ -261,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610071659141_pet photos controller.resx">
       <DependentUpon>201610071659141_pet photos controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610182226217_gender added.resx">
+      <DependentUpon>201610182226217_gender added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
