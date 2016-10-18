@@ -53,8 +53,10 @@ namespace Puppr.API.Controllers
             {
                 return BadRequest();
             }
+            var dbPet = Db.Pets.Find(id);
 
-            Db.Entry(pet).State = EntityState.Modified;
+            Db.Entry(dbPet).CurrentValues.SetValues(pet);
+            Db.Entry(dbPet).State = EntityState.Modified;
 
             try
             {
