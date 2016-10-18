@@ -107,8 +107,9 @@ namespace Puppr.API.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // GET: api/Owners/5/pets
+        // GET: api/me/pets
         [Authorize]
+        [Route("api/me/pets")]
         public dynamic GetPetsForOwner()
         {
             // Get the currently logged in user
