@@ -31,7 +31,23 @@ namespace Puppr.API.Controllers
                 owner.LastName,
                 owner.Photo,
                 owner.UserName,
-                owner.Pets
+
+                // swapped this out for (see below) - owner.Pets brings down way too much information
+                //owner.Pets,
+
+                Pets = owner.Pets.Select(p => new
+                {
+                    p.Name,
+                    p.Activity,
+                    p.DateOfBirth,
+                    p.DogFood,
+                    p.Toy,
+                    Breed = new
+                    {
+                        p.Breed.Name
+                    },
+                    PetPhotos = p.PetPhotos.Select(pp => new { pp.Url })
+                })
             });
         }
 

@@ -176,6 +176,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BattlesController.cs" />
+    <Compile Include="Controllers\BattleVotesController.cs" />
     <Compile Include="Controllers\BreedsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\OwnersController.cs" />
@@ -214,8 +215,13 @@
     <Compile Include="Migrations\201610071659141_pet photos controller.Designer.cs">
       <DependentUpon>201610071659141_pet photos controller.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610190009156_AddVoting.cs" />
+    <Compile Include="Migrations\201610190009156_AddVoting.Designer.cs">
+      <DependentUpon>201610190009156_AddVoting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Battle.cs" />
+    <Compile Include="Models\BattleVote.cs" />
     <Compile Include="Models\Breed.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Owner.cs" />
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610071659141_pet photos controller.resx">
       <DependentUpon>201610071659141_pet photos controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610190009156_AddVoting.resx">
+      <DependentUpon>201610190009156_AddVoting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -52,9 +52,22 @@ namespace Puppr.API.Infrastructure
                 .WithRequired(p => p.Pet)
                 .HasForeignKey(p => p.PetTwoId);
 
+            modelBuilder.Entity<Battle>()
+                .HasMany(o => o.Votes)
+                .WithRequired(p => p.Battle)
+                .HasForeignKey(p => p.BattleId);
+
+            modelBuilder.Entity<Pet>()
+                .HasMany(p => p.Votes)
+                .WithRequired(v => v.Pet)
+                .HasForeignKey(v => v.PetId)
+                .WillCascadeOnDelete(false);
+
             base.OnModelCreating(modelBuilder);
         }
 
         public System.Data.Entity.DbSet<Puppr.API.Models.PetPhoto> PetPhotoes { get; set; }
+
+        public System.Data.Entity.DbSet<Puppr.API.Models.BattleVote> BattleVotes { get; set; }
     }
 }

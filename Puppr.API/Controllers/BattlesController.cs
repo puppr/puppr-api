@@ -33,7 +33,61 @@ namespace Puppr.API.Controllers
                 return NotFound();
             }
 
-            return Ok(battle);
+            var challenger = db.Pets.Find(battle.PetOneId);
+            var defender = db.Pets.Find(battle.PetTwoId);
+
+            return Ok(new
+            {
+                Challenger = new
+                {
+                    challenger.PetId,
+                    challenger.Activity,
+                    Breed = new
+                    {
+                        challenger.Breed.BreedId,
+                        challenger.Breed.Name
+                    },
+                    challenger.DateOfBirth,
+                    challenger.DogFood,
+                    challenger.Name,
+                    Owner = new
+                    {
+                        challenger.OwnerId,
+                        challenger.Owner.FirstName,
+                        challenger.Owner.LastName,
+                        challenger.Owner.UserName
+                    },
+                    Photos = challenger.PetPhotos.Select(pp =>  pp.Url ),
+
+                    Votes = battle.PetOneVotes
+
+                },
+                Defender = new
+                {
+                    defender.PetId, 
+                    defender.Activity,
+                    Breed = new
+                    {
+                        defender.Breed.BreedId,
+                        defender.Breed.Name
+                    },
+                    defender.DateOfBirth,
+                    defender.DogFood,
+                    defender.Name,
+                    Owner = new
+                    {
+                        defender.OwnerId,
+                        defender.Owner.FirstName,
+                        defender.Owner.LastName,
+                        defender.Owner.UserName
+                    },
+                    Photos = defender.PetPhotos.Select(pp =>  pp.Url ),
+
+                    Votes = battle.PetTwoVotes
+
+
+                }
+            });
         }
 
         // PUT: api/Battles/5
