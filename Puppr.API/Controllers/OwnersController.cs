@@ -41,6 +41,7 @@ namespace Puppr.API.Controllers
                     p.Activity,
                     p.DateOfBirth,
                     p.DogFood,
+                    p.Gender,
                     p.Toy,
                     Breed = new
                     {
