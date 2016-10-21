@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201610190009156_AddVoting.Designer.cs">
       <DependentUpon>201610190009156_AddVoting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610212202566_Merge.cs" />
+    <Compile Include="Migrations\201610212202566_Merge.Designer.cs">
+      <DependentUpon>201610212202566_Merge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Battle.cs" />
     <Compile Include="Models\BattleVote.cs" />
@@ -270,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610190009156_AddVoting.resx">
       <DependentUpon>201610190009156_AddVoting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610212202566_Merge.resx">
+      <DependentUpon>201610212202566_Merge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
