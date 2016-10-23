@@ -38,6 +38,7 @@ namespace Puppr.API.Controllers
                 Pets = owner.Pets.Select(p => new
                 {
                     p.Name,
+                    p.PetId,
                     p.Activity,
                     p.DateOfBirth,
                     p.DogFood,
