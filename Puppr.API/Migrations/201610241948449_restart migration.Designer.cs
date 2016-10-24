@@ -7,13 +7,13 @@ namespace Puppr.API.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddVoting : IMigrationMetadata
+    public sealed partial class restartmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddVoting));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(restartmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610190009156_AddVoting"; }
+            get { return "201610241948449_restart migration"; }
         }
         
         string IMigrationMetadata.Source

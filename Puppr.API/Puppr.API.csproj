@@ -187,41 +187,9 @@
     <Compile Include="Infrastructure\PupprDataContext.cs" />
     <Compile Include="Infrastructure\SecuredController.cs" />
     <Compile Include="Infrastructure\SimpleAuthorizationServerProvider.cs" />
-    <Compile Include="Migrations\201609282128052_InitialMigration.cs" />
-    <Compile Include="Migrations\201609282128052_InitialMigration.Designer.cs">
-      <DependentUpon>201609282128052_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609282149339_SecondMigration.cs" />
-    <Compile Include="Migrations\201609282149339_SecondMigration.Designer.cs">
-      <DependentUpon>201609282149339_SecondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609282151053_ThirdMigration.cs" />
-    <Compile Include="Migrations\201609282151053_ThirdMigration.Designer.cs">
-      <DependentUpon>201609282151053_ThirdMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609282202358_FourthMigration.cs" />
-    <Compile Include="Migrations\201609282202358_FourthMigration.Designer.cs">
-      <DependentUpon>201609282202358_FourthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609282235155_FifthMigration.cs" />
-    <Compile Include="Migrations\201609282235155_FifthMigration.Designer.cs">
-      <DependentUpon>201609282235155_FifthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610052311491_AddIdentity.cs" />
-    <Compile Include="Migrations\201610052311491_AddIdentity.Designer.cs">
-      <DependentUpon>201610052311491_AddIdentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610071659141_pet photos controller.cs" />
-    <Compile Include="Migrations\201610071659141_pet photos controller.Designer.cs">
-      <DependentUpon>201610071659141_pet photos controller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610190009156_AddVoting.cs" />
-    <Compile Include="Migrations\201610190009156_AddVoting.Designer.cs">
-      <DependentUpon>201610190009156_AddVoting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610212202566_Merge.cs" />
-    <Compile Include="Migrations\201610212202566_Merge.Designer.cs">
-      <DependentUpon>201610212202566_Merge.cs</DependentUpon>
+    <Compile Include="Migrations\201610241948449_restart migration.cs" />
+    <Compile Include="Migrations\201610241948449_restart migration.Designer.cs">
+      <DependentUpon>201610241948449_restart migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Battle.cs" />
@@ -251,32 +219,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609282128052_InitialMigration.resx">
-      <DependentUpon>201609282128052_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609282149339_SecondMigration.resx">
-      <DependentUpon>201609282149339_SecondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609282151053_ThirdMigration.resx">
-      <DependentUpon>201609282151053_ThirdMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609282202358_FourthMigration.resx">
-      <DependentUpon>201609282202358_FourthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609282235155_FifthMigration.resx">
-      <DependentUpon>201609282235155_FifthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610052311491_AddIdentity.resx">
-      <DependentUpon>201610052311491_AddIdentity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610071659141_pet photos controller.resx">
-      <DependentUpon>201610071659141_pet photos controller.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610190009156_AddVoting.resx">
-      <DependentUpon>201610190009156_AddVoting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610212202566_Merge.resx">
-      <DependentUpon>201610212202566_Merge.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610241948449_restart migration.resx">
+      <DependentUpon>201610241948449_restart migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
