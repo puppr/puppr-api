@@ -44,10 +44,7 @@ namespace Puppr.API.Controllers
                     p.DogFood,
                     p.Gender,
                     p.Toy,
-                    Breed = new
-                    {
-                        p.Breed.Name
-                    },
+                    p.BreedId,
                     PetPhotos = p.PetPhotos.Select(pp => new { pp.Url })
                 })
             });

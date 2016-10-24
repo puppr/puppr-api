@@ -22,5 +22,17 @@ namespace Puppr.API.Models
         public virtual ICollection<PetPhoto> PetPhotos { get; set; }
 
         public virtual ICollection<BattleVote> Votes { get; set; }
+        
+        public class Changes
+        {
+            public int PetId { get; set; }
+            public int BreedId { get; set; }
+            public string Name { get; set; }
+            public DateTime DateOfBirth { get; set; }
+            public string DogFood { get; set; }
+            public string Toy { get; set; }
+            public string Activity { get; set; }
+            public string Gender { get; set; }
+        }
     }
 }

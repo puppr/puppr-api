@@ -37,7 +37,7 @@ namespace Puppr.API.Controllers
         // PUT: api/Pets/5
         [Authorize]
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutPet(int id, Pet pet)
+        public IHttpActionResult PutPet(int id, Pet.Changes pet)
         {
             if (!ModelState.IsValid)
             {
@@ -56,6 +56,7 @@ namespace Puppr.API.Controllers
             var dbPet = Db.Pets.Find(id);
 
             Db.Entry(dbPet).CurrentValues.SetValues(pet);
+
             Db.Entry(dbPet).State = EntityState.Modified;
 
             try

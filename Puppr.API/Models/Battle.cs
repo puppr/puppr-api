@@ -1,10 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Puppr.API.Models
 {
     public class Battle
+       
     {
+        public Battle()
+        {
+            Votes = new Collection<BattleVote>();
+        }
+
         public int BattleId { get; set; }
         public int CategoryId { get; set; }
         public int PetOneId { get; set; }
