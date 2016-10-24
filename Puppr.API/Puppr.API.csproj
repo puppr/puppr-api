@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201610241948449_restart migration.Designer.cs">
       <DependentUpon>201610241948449_restart migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610242017348_Add-Dates-To-Battle.cs" />
+    <Compile Include="Migrations\201610242017348_Add-Dates-To-Battle.Designer.cs">
+      <DependentUpon>201610242017348_Add-Dates-To-Battle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Battle.cs" />
     <Compile Include="Models\BattleVote.cs" />
@@ -221,6 +225,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610241948449_restart migration.resx">
       <DependentUpon>201610241948449_restart migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610242017348_Add-Dates-To-Battle.resx">
+      <DependentUpon>201610242017348_Add-Dates-To-Battle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

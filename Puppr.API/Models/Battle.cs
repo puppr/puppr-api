@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -16,6 +17,8 @@ namespace Puppr.API.Models
         public int CategoryId { get; set; }
         public int PetOneId { get; set; }
         public int PetTwoId { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         public int PetOneVotes
         {
