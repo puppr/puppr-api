@@ -15,7 +15,7 @@ namespace Puppr.API.Models
         public string Toy { get; set; }
         public string Activity { get; set; }
         public string Gender { get; set; }
-
+        public int Win { get; set; }
         public virtual Owner Owner { get; set; }
         public virtual Breed Breed { get; set; }
         public virtual ICollection<Battle> Battles { get; set; }

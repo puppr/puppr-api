@@ -38,6 +38,8 @@ namespace Puppr.API.Controllers
 
             return Ok(new
             {
+                StartDate = battle.StartDate,
+                EndDate = battle.EndDate,
                 Challenger = new
                 {
                     challenger.PetId,

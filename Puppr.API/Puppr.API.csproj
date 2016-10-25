@@ -195,6 +195,10 @@
     <Compile Include="Migrations\201610242017348_Add-Dates-To-Battle.Designer.cs">
       <DependentUpon>201610242017348_Add-Dates-To-Battle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610250010187_Wins added to pets.cs" />
+    <Compile Include="Migrations\201610250010187_Wins added to pets.Designer.cs">
+      <DependentUpon>201610250010187_Wins added to pets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Battle.cs" />
     <Compile Include="Models\BattleVote.cs" />
@@ -228,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610242017348_Add-Dates-To-Battle.resx">
       <DependentUpon>201610242017348_Add-Dates-To-Battle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610250010187_Wins added to pets.resx">
+      <DependentUpon>201610250010187_Wins added to pets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
