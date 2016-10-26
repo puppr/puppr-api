@@ -18,13 +18,19 @@ namespace Puppr.API.Controllers
         private PupprDataContext db = new PupprDataContext();
 
         // GET: api/Categories
-        public IQueryable<Category> GetCategories()
+        public dynamic GetCategories()
         {
-            return db.Categories;
+            return db.Categories.Select(x => new
+            {
+                x.CategoryId,
+                x.Name,
+                x.Description
+            
+            });
         }
 
-        // GET: api/Categories/5
-        [ResponseType(typeof(Category))]
+    // GET: api/Categories/5
+    [ResponseType(typeof(Category))]
         public IHttpActionResult GetCategory(int id)
         {
             Category category = db.Categories.Find(id);

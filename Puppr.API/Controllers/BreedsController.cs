@@ -18,10 +18,17 @@ namespace Puppr.API.Controllers
         private PupprDataContext db = new PupprDataContext();
 
         // GET: api/Breeds
-        public IQueryable<Breed> GetBreeds()
+        public dynamic GetBreeds()
         {
-            return db.Breeds;
+            return db.Breeds.Select(x => new
+            {
+                x.BreedId,
+                x.Name
+                
+
+            });
         }
+    
 
         // GET: api/Breeds/5
         [ResponseType(typeof(Breed))]
