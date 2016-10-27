@@ -18,9 +18,19 @@ namespace Puppr.API.Controllers
         private PupprDataContext db = new PupprDataContext();
 
         // GET: api/Battles
-        public IQueryable<Battle> GetBattles()
+        public dynamic GetBattles()
         {
-            return db.Battles;
+            return db.Battles.Select(x => new
+            {
+                x.BattleId,
+                Category = new
+                {
+                    x.Category.Name,
+                    x.Category.CategoryId
+                },
+
+
+            });
         }
 
         // GET: api/Battles/5

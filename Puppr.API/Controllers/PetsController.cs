@@ -39,6 +39,12 @@ namespace Puppr.API.Controllers
                 {
                     xx.PetPhotoId,
                     xx.Url
+                }),
+
+                BattleVote = x.Votes.Select(xx => new
+                {
+                    xx.BattleId,
+                    xx.PetId
                 })
             });
         }
