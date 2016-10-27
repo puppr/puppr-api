@@ -73,7 +73,8 @@ namespace Puppr.API.Controllers
                 pet.Win,
                 Owner = new
                 {
-                    pet.Owner.Photo
+                    pet.Owner.Photo,
+                    pet.Owner.UserName
                 },
                 Breed = new
                 {

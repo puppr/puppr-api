@@ -199,6 +199,10 @@
     <Compile Include="Migrations\201610250010187_Wins added to pets.Designer.cs">
       <DependentUpon>201610250010187_Wins added to pets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610271851364_challengephoto added.cs" />
+    <Compile Include="Migrations\201610271851364_challengephoto added.Designer.cs">
+      <DependentUpon>201610271851364_challengephoto added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Battle.cs" />
     <Compile Include="Models\BattleVote.cs" />
@@ -235,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610250010187_Wins added to pets.resx">
       <DependentUpon>201610250010187_Wins added to pets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610271851364_challengephoto added.resx">
+      <DependentUpon>201610271851364_challengephoto added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
