@@ -53,6 +53,7 @@ namespace Puppr.API.Controllers
             {
                 StartDate = battle.StartDate,
                 EndDate = battle.EndDate,
+                ChallengerPhoto = battle.ChallengerPhoto,
                 Category = new
                 {
                     battle.Category.Name

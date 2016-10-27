@@ -15,6 +15,7 @@ namespace Puppr.API.Models
 
         public int BattleId { get; set; }
         public int CategoryId { get; set; }
+        public string ChallengerPhoto { get; set; }
         public int PetOneId { get; set; }
         public int PetTwoId { get; set; }
         public DateTime StartDate { get; set; }
