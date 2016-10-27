@@ -75,6 +75,11 @@ namespace Puppr.API.Controllers
                 {
                     pet.Owner.Photo
                 },
+                Breed = new
+                {
+                    pet.Breed.BreedId,
+                    pet.Breed.Name
+                },
                 Photos = pet.PetPhotos.Select(xx => new
                 {
                     xx.PetPhotoId,
