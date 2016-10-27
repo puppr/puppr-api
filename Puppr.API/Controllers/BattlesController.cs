@@ -23,6 +23,7 @@ namespace Puppr.API.Controllers
             return db.Battles.Select(x => new
             {
                 x.BattleId,
+                x.EndDate,
                 Category = new
                 {
                     x.Category.Name,

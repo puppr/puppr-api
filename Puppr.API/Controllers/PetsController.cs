@@ -71,6 +71,15 @@ namespace Puppr.API.Controllers
                 pet.PetId,
                 pet.Toy,
                 pet.Win,
+                Owner = new
+                {
+                    pet.Owner.Photo
+                },
+                Photos = pet.PetPhotos.Select(xx => new
+                {
+                    xx.PetPhotoId,
+                    xx.Url
+                }),
                 Battles = pet.Battles.Take(5).Select(xx => new
                 {
                     xx.EndDate,
