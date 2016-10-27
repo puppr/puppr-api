@@ -45,7 +45,27 @@ namespace Puppr.API.Controllers
                     p.Gender,
                     p.Toy,
                     p.BreedId,
-                    PetPhotos = p.PetPhotos.Select(pp => new { pp.Url, pp.PetId, pp.PetPhotoId })
+                    PetPhotos = p.PetPhotos.Select(pp => new
+                    {
+                        pp.Url,
+                        pp.PetId,
+                        pp.PetPhotoId
+                    }),
+                    Battle = p.Battles.OrderByDescending(ppp => ppp.BattleId).Take(5).Select(ppp => new
+
+                    {
+                        ppp.BattleId,
+                        ppp.PetTwoId,
+                        ppp.PetOneId,
+                        ppp.PetOneVotes,
+                        ppp.PetTwoVotes
+
+                       
+
+
+                    }),
+                    
+
                 })
             });
         }
