@@ -24,13 +24,6 @@ namespace Puppr.API.Controllers
             {
                 x.BattleId,
                 x.EndDate,
-                x.PetOneId,
-                x.PetTwoId,
-                Pet = new
-                {
-                    x.Pet.PetPhotos,
-                    x.Pet.Name
-                },
                 Category = new
                 {
                     x.Category.Name,
