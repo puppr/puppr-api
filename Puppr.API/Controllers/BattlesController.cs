@@ -26,11 +26,6 @@ namespace Puppr.API.Controllers
                 x.EndDate,
                 x.PetOneId,
                 x.PetTwoId,
-                Pet = new
-                {
-                    x.Pet.PetPhotos,
-                    x.Pet.Name
-                },
                 Category = new
                 {
                     x.Category.Name,
@@ -58,25 +53,19 @@ namespace Puppr.API.Controllers
             {
                 StartDate = battle.StartDate,
                 EndDate = battle.EndDate,
+                Category = new
+                {
+                    battle.Category.Name
+                },
                 Challenger = new
                 {
                     challenger.PetId,
-                    challenger.Activity,
                     Breed = new
                     {
                         challenger.Breed.BreedId,
                         challenger.Breed.Name
                     },
-                    challenger.DateOfBirth,
-                    challenger.DogFood,
                     challenger.Name,
-                    Owner = new
-                    {
-                        challenger.OwnerId,
-                        challenger.Owner.FirstName,
-                        challenger.Owner.LastName,
-                        challenger.Owner.UserName
-                    },
                     Photos = challenger.PetPhotos.Select(pp =>  pp.Url ),
 
                     Votes = battle.PetOneVotes
@@ -85,22 +74,12 @@ namespace Puppr.API.Controllers
                 Defender = new
                 {
                     defender.PetId, 
-                    defender.Activity,
                     Breed = new
                     {
                         defender.Breed.BreedId,
                         defender.Breed.Name
                     },
-                    defender.DateOfBirth,
-                    defender.DogFood,
                     defender.Name,
-                    Owner = new
-                    {
-                        defender.OwnerId,
-                        defender.Owner.FirstName,
-                        defender.Owner.LastName,
-                        defender.Owner.UserName
-                    },
                     Photos = defender.PetPhotos.Select(pp =>  pp.Url ),
 
                     Votes = battle.PetTwoVotes
